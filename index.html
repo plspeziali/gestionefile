@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Accesso a File Remoto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+    </head>
+    <body>
+        <div>
+            <select id="selectExt" onchange="reloadFiles()">
+                <option>Seleziona un'estensione</option>
+            </select>
+            <select id="selectFiles" onchange="showFile()">
+                <option>Seleziona un file</option>
+            </select><br><br>
+            <button onclick="reloadExt()">Ricarica le estensioni e i file</button>
+            <div>
+                <form action="FileReceiver.php" enctype="multipart/form-data" method="post">
+                <p>
+                    Allega un file da inviare al server:<br>
+                    <input type="file" name="fileSent" size="40">
+                </p>
+                    <div><input type="submit" value="Invia"></div>
+                </form>
+            </div><br><br>
+            <div id="showDiv"></div>
+        </div>
+    </body>
+</html>
